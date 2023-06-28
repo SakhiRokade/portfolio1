@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Creative Portfolio</title>
+    <style>
+        img {
+            height: 500px;
+            width: 500px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        main {
+            margin: 20px;
+        }
+        
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        .circle-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .moto {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .background-colorful {
+            background-color:beige;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .skills {
+            background-color:beige;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .skills img {
+            background-color:beige;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 50%;
+        }
+        
+        .gallery {
+            background-color:beige;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .gallery img {
+            background-color:beige;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .hobbies {
+            background-color:beige;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .hobbies img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 50%;
+        }
+        
+        .education-details {
+            background-color:beige;
+            margin-bottom: 20px;
+        }
+        
+        .testimony {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .contact-details {
+            background-color:beige;
+        
+            margin-bottom: 20px;
+        }
+        
+        .navigation {
+            text-align: center;
+        }
+        
+        .navigation button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Digital Portfolio</h1>
+    </header>
+    
+    <main>
+        <div id="page1" class="page active">
+            <div class="background-colorful">
+                <img class="circle-photo" src="C:\Users\Prakash\Documents\OneNote Notebooks\My Notebook\photo\IMG_20230619_200513.jpg" alt="Profile Photo">
+                <h2>introduction</h2>
+                <p style="color:black;">Name: Sakhi Kiran Rokade<br>
+                    collage: MIT Academy Of Engineering pune<br>Branch: Mechanical<br>Year:FY BTech
+                </p>
+            </div>
+        </div>
+        <div id="page2" class="page">
+            <h2>Education Details</h2>
+            <p>HIGH SCHOOL: JIJAMATA GIRLS HIGH SCHOOL<br>
+            JR COLLAGE: SHRI SHIVAJI JR COLLEGE<br>
+            SSC MARKS: 93%<br>
+        HSC MARKS: 64%<br>
+        CURRENT:FY student persuing BTech degree in mechanical field at MITAOE </p>
+            
+        </div>
+           
+        <div id="page3" class="page">
+            <h2>Hobbies and Interests</h2>
+            <div class="hobbies">
+                <a href="E:\singing">singing</a>
+                <a href="E:\photography">photography</a>
+                <a href="E:\art and craft">art and craft</a>
+                <a href="E:\travellig">travelling</a>
+            </div>
+        </div>
+        
+        <div id="page4" class="page">
+            <h2>skills</h2>
+            <div class="skills">
+            <p>PHOTOGRAPHY<br>
+            DESIGNING<br>
+            FUSION 360<br>
+            AUTOCAD<br>
+            BASIC C LANGUAGE<br>
+            BASIC PYTHON<br>
+            VIDEO EDITING</p>>
+            </div>
+            
+            <h2>Project Work</h2>
+           <img src="C:\Users\Prakash\Documents\OneNote Notebooks\My Notebook\photo\WhatsApp Image 2023-05-30 at 10.00.22 PM (1).jpeg">
+           <img src="C:\Users\Prakash\Documents\OneNote Notebooks\My Notebook\photo\WhatsApp Image 2023-05-30 at 10.00.22 PM.jpeg">
+           <img src="c:\Users\Prakash\Documents\New folder (2)\img.html\WhatsApp Image 2023-05-30 at 10.18.49 PM.jpeg">
+        </div>
+     
+       
+        </div>
+        
+        <div id="page5" class="page">
+            <h2>Contact Details</h2>
+            <div class="contact-details">
+                <p>PHONE NO.:9699328090<br>
+                EMAIL ID:sakhi.rokade@mitaoe.ac.in</p>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <button onclick="changePage(-1)">Previous</button>
+            <button onclick="changePage(1)">Next</button>
+        </div>
+    </main>
+
+    <script>
+        var currentPage = 1;
+        var totalPage = 5;
+        
+        function changePage(offset) {
+            currentPage += offset;
+            
+            if (currentPage < 1) {
+                currentPage = totalPage;
+            }
+            
+            if (currentPage > totalPage) {
+                currentPage = 1;
+            }
+            
+            for (var i = 1; i <= totalPage; i++) {
+                var pageElement = document.getElementById("page" + i);
+                
+                if (i === currentPage) {
+                    pageElement.classList.add("active");
+                } else {
+                    pageElement.classList.remove("active");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
